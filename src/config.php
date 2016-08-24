@@ -129,7 +129,7 @@ return [
     |
     */
 
-    'authRepositoryClass'       => 'Laraflock\Dashboard\Repositories\Auth\AuthRepository',
+    'authRepositoryClass'       => 'Laraflockmeme\Dashboard\Repositories\Auth\AuthRepository',
     /*
     |--------------------------------------------------------------------------
     | Permission Repository Class
@@ -149,7 +149,7 @@ return [
     |
     */
 
-    'permissionRepositoryClass' => 'Laraflock\Dashboard\Repositories\Permission\PermissionRepository',
+    'permissionRepositoryClass' => 'Laraflockme\Dashboard\Repositories\Permission\PermissionRepository',
     /*
     |--------------------------------------------------------------------------
     | Role Repository Class
@@ -169,7 +169,7 @@ return [
     |
     */
 
-    'roleRepositoryClass'       => 'Laraflock\Dashboard\Repositories\Role\RoleRepository',
+    'roleRepositoryClass'       => 'Laraflockme\Dashboard\Repositories\Role\RoleRepository',
     /*
     |--------------------------------------------------------------------------
     | User Repository Class
@@ -189,7 +189,7 @@ return [
     |
     */
 
-    'userRepositoryClass'       => 'Laraflock\Dashboard\Repositories\User\UserRepository',
+    'userRepositoryClass'       => 'Laraflockme\Dashboard\Repositories\User\UserRepository',
 
     /*
     |--------------------------------------------------------------------------
@@ -209,7 +209,7 @@ return [
     | Module Repository Interface: Laraflock\Dashboard\Repositories\Module\ModuleRepositoryInterface
     |
      */
-    'moduleRepositoryClass'     => 'Laraflock\Dashboard\Repositories\Module\ModuleRepository',
+    'moduleRepositoryClass'     => 'Laraflockme\Dashboard\Repositories\Module\ModuleRepository',
 
     /*
     |--------------------------------------------------------------------------
