@@ -68,25 +68,25 @@ class RoleRepository extends BaseRepository implements RoleRepositoryInterface
     public function create(array $data, $validate = true)
     {
         $this->rules = [
-          'slug' => 'required|alpha_dash|unique:roles',
-          'name' => 'required|alpha_dash|unique:roles',
+            'slug' => 'required|alpha_dash|unique:roles',
+            'name' => 'required|alpha_dash|unique:roles',
         ];
 
         if ($validate) {
             $this->validate($data);
         }
-
         // Convert the checkbox values of "1" to true, so permission checking works with Sentinel.
         if (isset($data['permissions'])) {
+            $data['permissions'] = array_flip($data['permissions']);
             foreach ($data['permissions'] as $permission => $value) {
-                $data['permissions'][$permission] = true;
+                $data["permissions"][$permission] = true;
             }
         }
 
         try {
             $role = $this->sentinel->getRoleRepository()
-                                   ->createModel()
-                                   ->create($data);
+                ->createModel()
+                ->create($data);
         } catch (QueryException $e) {
             throw new RolesException(trans('dashboard::dashboard.errors.role.create'));
         }
@@ -118,9 +118,10 @@ class RoleRepository extends BaseRepository implements RoleRepositoryInterface
         if ($validate) {
             $this->validate($data);
         }
-
         // Convert the checkbox values of "1" to true, so permission checking works with Sentinel.
         if (isset($data['permissions'])) {
+            $data['permissions'] = array_flip($data['permissions']);
+
             foreach ($data['permissions'] as $permission => $value) {
                 $data['permissions'][$permission] = true;
             }
