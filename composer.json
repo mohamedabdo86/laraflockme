@@ -1,5 +1,5 @@
 {
-  "name": "laraflock/dashboard",
+  "name": "laraflockme/dashboard",
   "description": "Laravel 5.1 (LTS) Dashboard Base",
   "keywords": [
     "laravel",
@@ -7,7 +7,7 @@
     "admin",
     "laraflock"
   ],
-  "homepage": "https://github.com/laraflock/dashboard",
+  "homepage": "https://github.com/mohamedabdo86/laraflockme",
   "license": "MIT",
   "authors": [
     {
@@ -38,12 +38,12 @@
       "tests"
     ],
     "psr-4": {
-      "Laraflock\\Dashboard\\": "src/"
+      "Laraflockme\\Dashboard\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Laraflock\\Dashboard\\Test\\": "tests/"
+      "Laraflockme\\Dashboard\\Test\\": "tests/"
     }
   }
 }

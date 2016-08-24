@@ -10,6 +10,10 @@ We do not give estimated times for completion on `Accepted` Proposals.
 - [Rejected](https://github.com/laraflock/dashboard/labels/Rejected)
 
 ---
+### v3.2.1 - 2016-08-24
+
+- Stable Release
+- [Feature] Some Enhancement with role controller
 
 ### v3.2.0 - 2015-09-10
 
