@@ -38,8 +38,9 @@ class RolesController extends BaseDashboardController
     public function create()
     {
         $permissions = $this->permissionRepositoryInterface->getAll();
+        $selectPermisions = $permissions->pluck("slug", "name");
 
-        return $this->view('roles.create')->with(['permissions' => $permissions]);
+        return $this->view('roles.create', compact("selectPermisions"))->with(['permissions' => $permissions]);
     }
 
     /**
@@ -57,9 +58,9 @@ class RolesController extends BaseDashboardController
             Flash::error($e->getMessage());
 
             return redirect()
-              ->route('roles.create')
-              ->withErrors($e->getErrors())
-              ->withInput();
+                ->route('roles.create')
+                ->withErrors($e->getErrors())
+                ->withInput();
         }
 
         Flash::success(trans('dashboard::dashboard.flash.role.create.success'));
@@ -83,8 +84,11 @@ class RolesController extends BaseDashboardController
         }
 
         $permissions = $this->permissionRepositoryInterface->getAll();
+        $selectPermisions = $permissions->pluck("slug", "name");
 
-        return $this->view('roles.edit')->with(['role' => $role, 'permissions' => $permissions]);
+        return $this->view('roles.edit', compact("selectPermisions"))->with(['role'        => $role,
+                                                                             'permissions' => $permissions
+        ]);
     }
 
     /**
@@ -103,9 +107,9 @@ class RolesController extends BaseDashboardController
             Flash::error($e->getMessage());
 
             return redirect()
-              ->route('roles.edit', ['id' => $id])
-              ->withErrors($e->getErrors())
-              ->withInput();
+                ->route('roles.edit', ['id' => $id])
+                ->withErrors($e->getErrors())
+                ->withInput();
         } catch (RolesException $e) {
             Flash::error($e->getMessage());
 
