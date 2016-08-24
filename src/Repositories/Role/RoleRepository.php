@@ -121,7 +121,6 @@ class RoleRepository extends BaseRepository implements RoleRepositoryInterface
         // Convert the checkbox values of "1" to true, so permission checking works with Sentinel.
         if (isset($data['permissions'])) {
             $data['permissions'] = array_flip($data['permissions']);
-
             foreach ($data['permissions'] as $permission => $value) {
                 $data['permissions'][$permission] = true;
             }
