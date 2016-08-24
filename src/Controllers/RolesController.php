@@ -38,8 +38,9 @@ class RolesController extends BaseDashboardController
     public function create()
     {
         $permissions = $this->permissionRepositoryInterface->getAll();
+        $selectPermisions = $permissions->pluck("slug", "name");
 
-        return $this->view('roles.create')->with(['permissions' => $permissions]);
+        return $this->view('roles.create', compact("selectPermisions"))->with(['permissions' => $permissions]);
     }
 
     /**
