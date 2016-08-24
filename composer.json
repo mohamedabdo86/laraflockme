@@ -38,12 +38,12 @@
       "tests"
     ],
     "psr-4": {
-      "Laraflock\\Dashboard\\": "src/"
+      "Laraflockme\\Dashboard\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Laraflock\\Dashboard\\Test\\": "tests/"
+      "Laraflockme\\Dashboard\\Test\\": "tests/"
     }
   }
 }
